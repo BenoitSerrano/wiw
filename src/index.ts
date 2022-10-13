@@ -1,12 +1,19 @@
 import Express from "express"
 import { AppDataSource } from "./data-source"
 import "reflect-metadata"
+import { giftService } from "./modules/gift";
 
 AppDataSource.initialize().then(async () => {
     const app = Express();
 
     app.get("/api/gifts", async (_, res) => {
-        res.send("Hello")
+        const gifts = await giftService.fetchAll()
+        res.send(gifts)
+    })
+
+    app.post("/api/gifts", async (_, res) => {
+        await giftService.createOne("truc")
+        res.sendStatus(201)
     })
 
     app.listen(3001, async () => {
