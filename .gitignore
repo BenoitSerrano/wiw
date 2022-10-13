@@ -1,3 +1,7 @@
-node_modules
-src/client
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
 dist
