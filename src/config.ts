@@ -10,4 +10,5 @@ const config = {
     DB_NAME: process.env.DB_NAME || "postgres",
     DB_USERNAME: process.env.DB_USERNAME || "",
     DB_PASSWORD: process.env.DB_PASSWORD || "",
+    PORT: process.env.PORT ? Number(process.env.PORT) : 8080
 }
